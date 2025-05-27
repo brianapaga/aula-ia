@@ -3,11 +3,10 @@ print("Olá Mundo")
 
 # 2- Realizar a soma de dois números
 print("Soma de variveis")
-numero1 = 8
-numero2 = 16
+numero1 = input("Digite o primeiro numero ")
+numero2 = input("Digite o segundo numero ")
 
 soma = numero1 + numero2
-
 print(f"A soma de {numero1} e {numero2} é: {soma}")
 
 # Calculadora de Volume
