@@ -1,9 +1,9 @@
-try:
-    Numerador = int(input("Digite o numerador "))
-    Denominador = int(input("Digite o denominador "))
-    Resultado = Numerador / Denominador
-    print(f"O resultado é: {Resultado}")
-except ValueError:
-    print("Valor Inválido ")
-except ZeroDivisionError:
-    print("Error! Não é possivel dividir por zero  ")
+import requests
+
+cep = "06455000"
+url = f"https://viacep.com.br/ws/{cep}/json/"
+
+dados = requests.get(url).json()
+
+print(dados)
+
