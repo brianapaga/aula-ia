@@ -1,0 +1,4 @@
+O CEP pertence à cidade de São Paulo.
+Logradouro: Praça da Sé
+Bairro: Sé
+UF: SP
