@@ -13,16 +13,16 @@ def consultar_cotacao_moeda():
             resposta = requests.get(url_api)
             resposta.raise_for_status()
             dados_cotacao = resposta.json()
-            if not dados_cotacao or f"{codigo_moeda}brl" not in dados_cotacao:
+            if not dados_cotacao or f"{codigo_moeda}BRL" not in dados_cotacao:
                 print(f"Não foi possivel encontra a cotação para '{codigo_moeda}'. verificar codigo da moeda ou tente outra.")
                 continue
-            cotacao = dados_cotacao[f"{codigo_moeda}brl"]
+            cotacao = dados_cotacao[f"{codigo_moeda}BRL"]
             valor_compra = float(cotacao.get('bid', 0.0))
             valor_venda = float(cotacao.get('ask', 0.0))
-            valor_maximo = float(cotacao.get('haigh', 0.0))
+            valor_maximo = float(cotacao.get('high', 0.0))
             valor_minimo = float(cotacao.get('low', 0.0))
             data_atualizacao = cotacao.get('create_date','data/hora não disponivel')
-            print(f"cotação de {codigo_moeda}/brl")
+            print(f"cotação de {codigo_moeda}/BRL")
             print(f"Valor de compra(BID): R$ {valor_compra:.4f}")
             print(f"Valor de venda (ASK): R$ {valor_venda:.4f}")
             print(f"Valor de máximo: R$ {valor_maximo:.4f} 24 horas")
@@ -30,6 +30,6 @@ def consultar_cotacao_moeda():
             print(f"Ultima atualização: R$ {data_atualizacao}")
         except:
             print("Moeda inválida, digite o codigo correto: ")
-if __name__ == "__main__":
-    consultar_cotacao_moeda()
+
+consultar_cotacao_moeda()
 
